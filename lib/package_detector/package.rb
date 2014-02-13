@@ -1,5 +1,3 @@
-require 'visitor'
-
 module PackageDetector
   class Package
     def accept(package, visitor)
@@ -13,3 +11,8 @@ module PackageDetector
     end
   end
 end
+
+root_dir = File.expand_path(File.join('..', 'package', '*'), __FILE__)
+Dir[root_dir].map{|fn|
+  require fn if File.file?(fn)
+}
