@@ -7,10 +7,10 @@ class PackageDetector
   attr_accessor :package
 
   def initialize(package)
-    if package.instance_of? File
+    if package.kind_of? IO
       @package = package
     else
-      raise
+      raise TypeError, "can't recieve an object except for IO object."
     end
   end
 
