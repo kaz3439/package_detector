@@ -30,7 +30,7 @@ else
   puts 'I cannot understand this app...'
 end
 
-res = pd.guess '/path/to/your/app', PackageDetector::Package::Ios
+res = pd.guess PackageDetector::Package::Ios
 puts res
 #=> true
 
