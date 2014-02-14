@@ -1,6 +1,7 @@
 # PackageDetector
 
-TODO: Write a gem description
+This gem lets you detect which kind of packages it is.
+I implemented it based on "Visitor Pattern".
 
 ## Installation
 
@@ -18,7 +19,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+case PackageDetector.detect '/path/to/your/app'
+when PackageDetector::Package::Ios
+  puts 'It seems to be an ios app!'
+when PackageDetector::Package::Android
+  puts 'It seems to be an android app!'
+else
+  puts 'I cannot understand this app...'
+end
+
+res = PackageDetector.guess '/path/to/your/app', PackageDetector::Package::Ios
+
+```
 
 ## Contributing
 
