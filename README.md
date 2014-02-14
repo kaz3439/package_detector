@@ -20,7 +20,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-case PackageDetector.detect '/path/to/your/app'
+pd = PackageDetector.new(File.open('/path/to/your/app'))
+case pd.detect 
 when PackageDetector::Package::Ios
   puts 'It seems to be an ios app!'
 when PackageDetector::Package::Android
@@ -29,7 +30,15 @@ else
   puts 'I cannot understand this app...'
 end
 
-res = PackageDetector.guess '/path/to/your/app', PackageDetector::Package::Ios
+res = pd.guess PackageDetector::Package::Ios
+puts res
+#=> true
+
+pd.ios?
+#=> true
+
+pd.android?
+#=> false
 
 ```
 
