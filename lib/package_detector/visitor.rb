@@ -1,4 +1,4 @@
-module PackageDetector
+class PackageDetector
   class Visitor
     def visit(package)
       raise NotImplementedError, 'you need to specify how to compose'

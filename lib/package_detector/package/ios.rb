@@ -1,4 +1,4 @@
-module PackageDetector
+class PackageDetector
   class Package
     class Ios < Package
 

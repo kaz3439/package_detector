@@ -1,7 +1,7 @@
 require 'zip/zip'
 require 'tempfile'
 
-module PackageDetector
+class PackageDetector
   class Visitor
     class Zip < Visitor
       def visit(package, element)

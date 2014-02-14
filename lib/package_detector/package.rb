@@ -1,4 +1,4 @@
-module PackageDetector
+class PackageDetector
   class Package
     def accept(package, visitor)
       visitor.visit(package, self)
